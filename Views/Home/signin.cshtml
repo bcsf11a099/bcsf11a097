@@ -1,0 +1,74 @@
+﻿@model EAD_project.Models.user		
+															<div class="body">
+						 <form name="form" action="/Home/validate"  onsubmit="return verify(this)" method="POST">
+	<h1 style="color:red">
+	<pre>
+	
+    <b>Sign In</h1></pre>
+<pre> 													                                               
+</pre>
+<pre>	
+	Login Name:<span style="color:#D00000;">*</span><input type="text" name="loginName"   value="">                             
+		        								
+	Password:<span style="color:#D00000;">*</span>  <input type="password" name="password" value="">			 	
+	
+    	User Type:<span style="color:#D00000;">*</span> <input type="radio" name="type" value="manager"></input>Manager  <input type="radio" name="type" checked value="customer"></input>Customer
+             
+	<input type="submit" name="signin" value="Log In"> <input type="reset" name="clear" value="Reset">
+       
+        <a href="/Home/signup">Create New Account?</a>
+      
+
+                                                                            
+   <img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+
+										  
+</pre>
+<script type="text/javascript">
+
+
+	function verify()
+            {
+		
+                var name = document.forms["form"]["name"].value;
+               	var pass=document.forms["form"]["password"].value;
+		
+
+               		
+
+		if(name=="")
+		{
+			alert("User Name field is empty ... !!!");
+			return false;
+		}
+		if(pass=="")
+		{
+			alert("Password field is empty ... !!!");
+			return false;
+		}
+		
+
+               
+		                            }
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>			
+			@*<p>
+			              	� 2014 by Purple 7 Boutique. All Rights Reserved
+	</p>*@
+			</div>
+@*</body>
+</html>*@	

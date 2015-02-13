@@ -1,0 +1,85 @@
+﻿@model List<EAD_project.Models.product>																	
+
+
+<div class="body"><form name="form" action="/Customer/detail"  onsubmit="return verify(this)" method="POST">
+
+							
+
+<h1 style="color:red"><pre>
+
+
+
+
+			List Of Products</h1></pre>
+<pre>
+								  						<a href="/Home/signout"><i>Sign Out?</a><br>
+
+</pre>
+    <table border="1">
+        <tr bgcolor="red">
+            <td>Name</td>
+            <td>   Brand</td>
+            <td>   Price</td>
+            <td>   Quantity</td>
+            <td>  image</td>
+            <td>  cart</td>
+        </tr>
+        @foreach (var p in Model)
+        {
+            if(p.type==ViewBag.t)
+            {
+               // ViewBag.cName = p.name;
+                ViewBag.p = p.price;
+                ViewBag.pn = p.name;
+            <tr>
+                <td>@p.name</td>
+                <td>   @p.brand</td>
+                <td>   @p.price</td>
+                <td>   @p.quantity</td>
+                <td><img src="~/Files/@p.image" style="height:100px;width:100px" /></td>
+                <td>  <input type="button" value="Add to Cart" id="b1"></td><p id="p1"></p>
+                
+            </tr>
+            }
+        }
+    </table>
+                      @Scripts.Render("~/bundles/jquery")
+                      <script>
+                          $(document).ready(function () {
+                              $('#b1').click(function () {
+                                  $.getJSON("/Customer/addCart" , function (x) {
+                                      $('#p1').text(x);
+                                  });
+                              });
+                          });
+                          </script>				
+
+
+
+
+
+                                  <img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+
+                         </div>
+                         <script type="text/javascript">
+
+
+                             function verify()
+                             {
+
+                                 var name = document.forms["form"]["p"].value;
+
+
+
+                                 if(name=="")
+                                 {
+                                     alert(" Name field is empty ... !!!");
+                                     return false;
+                                 }
+                             }
+                      </script>
+			
+			
+			</div>
+
+  

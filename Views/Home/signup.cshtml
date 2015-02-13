@@ -1,0 +1,139 @@
+﻿
+@model EAD_project.Models.user
+																	<div class="body">
+                                                                        <pre>
+<h1 style="color:red"><b>
+</h1><h2 style="color:red"><b><i>    New User? Please Sign Up</h2></pre><pre> 														                                               </pre>
+    
+    @using (Html.BeginForm("addUser", "Home", new { onsubmit = "return verify(this)" }))
+    {
+                 @Html.AntiForgeryToken()
+                 @Html.ValidationSummary(true)
+
+                @Html.Label("Your Name:")<span style="color:#D00000;">*</span><br>
+                @Html.TextBox("name")<br><br>
+                @Html.ValidationMessage("name")
+                @Html.Label("Your age: ")    <br>
+                @Html.TextBox("age")<br><br>
+        
+                @Html.Label("Your Address:  ")<span style="color:#D00000;">*</span> <br>
+                @Html.TextBox("address")<br><br>
+                @Html.ValidationMessage("address")
+                @Html.Label("Your Number:   ")<br>
+                @Html.TextBox("number")<br><br>
+        
+                 @Html.Label("Login Name:")<span style="color:#D00000;">*</span><br>
+                <input type="text" id="t1" name="loginName"><input type="button" id="b1" value="check Availability">
+                <p id="p1"> </p><br>
+                @Html.ValidationMessage("loginName")
+                @Html.Label("Your Password: ")<span style="color:#D00000;">*</span><br>  
+                <input type="password" name="password" value=""><br><br>
+                @Html.ValidationMessage("password")  
+                @Html.Label("User Type:")<span style="color:#D00000;">*</span> @Html.RadioButton("type", "manager", new { _checked = "checked" })@Html.Label("Manager")  @Html.RadioButton("type", "customer")@Html.Label("Customer")<br><br>
+                @Html.ValidationMessage("type")
+	<input type ="submit" name="Sign Up" value="Sign Up">   <input type ="reset" name="reset" value="Reset"><br><br>
+
+            
+
+    }
+     @Scripts.Render("~/bundles/jquery")    
+     <script>
+     $(document).ready(function () {
+      $('#b1').click(function () {
+       $.getJSON("/Home/checkUser?lName=" + $('#t1').val(), function (x) {
+                     $('#p1').text(x);
+                     });
+     });
+    });
+      </script>				
+                                                                            
+   <img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+
+										  
+</pre>
+    
+<script type="text/javascript">
+
+
+	function verify()
+            {
+		
+                var name = document.forms["form"]["name"].value;
+               	var pass=document.forms["form"]["password"].value;
+		        var lname = document.forms["form"]["loginName"].value;
+               	var address=document.forms["form"]["address"].value;
+		        var mobile=document.forms["form"]["number"].value;
+		        var Vage=document.forms["form"]["age"].value;
+		        var regmobile=/^[0-9]+$/
+                var type1=document.forms["form"]["type"].value;		
+               		
+
+		if(name=="")
+		{
+			alert(" Name field is empty ... !!!");
+			return false;
+		}
+		if(address=="")
+		{
+			alert("Address field is empty ... !!!");
+			return false;
+		}
+		if(lname=="")
+		{
+			alert("Login Name field is empty ... !!!");
+			return false;
+		}
+		if(pass=="")
+		{
+			alert("Password field is empty ... !!!");
+			return false;
+		}
+		if(mobile=="")
+		{
+			alert("Mobile number field is empty ... !!!");
+			return false;
+		}
+		if (mobile.length != 11)
+                    {
+                        alert("Sorry..moblie number is not valid !!! ");
+			return false;
+                    }
+
+		 if (!mobile.match(regmobile))
+                    {
+                        alert("mobile number is not valid...");
+			return false;
+                    }
+		if (!Vage.match(regmobile))
+                    {
+                        alert("Age is not valid...");
+			return false;
+                    }
+		 if(type1=="")
+		{
+			alert("User type field is empty ... !!!");
+			return false;
+		}
+
+
+		                            }
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+	</div><div id="connect">
+					</div>
+			
+			
+			</div>

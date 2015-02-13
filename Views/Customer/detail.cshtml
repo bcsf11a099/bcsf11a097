@@ -1,0 +1,81 @@
+﻿@*<!DOCTYPE html>
+<html>
+<head>
+
+
+	<meta charset="UTF-8">
+	<title>customer</title>
+	<link rel="stylesheet" href="~/Content/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<img src="~/Images/logo.jpg" alt="LOGO" height="112" width="248"></a>
+				</div>
+	
+	</div>*@
+																	
+
+
+<div class="body"><form name="form" action="/Customer/view?name=@ViewBag.n"   method="POST">
+
+							<pre>
+
+
+								
+									
+
+
+
+									    <a href="../Home/signout"><i>Sign Out?</a><br>
+
+</h2></pre><pre>
+Enter Product type which you want to search:
+<input type="text" id="t1" value="" placeholder="e.g shoes" name="type"/>		
+
+
+<input type="button" name="signin" value="search" id="b1"> <a href="/Customer/customer">Back to menu?</a>       
+</pre>    
+           <table id="t2" border="1"></table>
+<pre>
+<img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+</pre>
+</div>
+@Scripts.Render("~/bundles/jquery") 
+<script>
+
+    $(document).ready(function () {
+
+
+        $('#b1').click(function () {
+
+            var name = $('#t1').val();
+            //alert(name);
+            $.getJSON('/Customer/searchAjax?us=' + name, function (x1) {
+                //alert("abc1");
+
+                    // alert("abc2");
+                $("#t2").append('<tr bgcolor=red><th>Name</th><th>Brand</th><th>Price</th><th>Quantity</th><th>Image</th></tr>');
+                $.each(x1, function (i, item) {
+                        
+                        $("#t2").append("<tr ><td>" + item.name + "</td><td>" + item.brand + "</td><td>" + item.price + "</td><td>" + item.quantity + "</td><td>"+ "<img src=~/Files/" +"'"+ item.image +"'" +"height=100 width=100> </td>" + "</tr>");
+                        //$("#t1").append('<tr><td><img src=' + "'" + "detail.gif" +"'" + "height=50 width=50> </td><td>" + item.Name + '</td></tr>')
+                    });
+
+            });
+        });
+        });
+
+
+
+</script>
+		
+	
+			@*<p>
+			              	� 2014 by Purple 7 Boutique. All Rights Reserved
+	</p>*@
+			</div>
+@*</body>
+</html>*@

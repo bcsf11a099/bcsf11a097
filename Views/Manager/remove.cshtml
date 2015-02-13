@@ -1,0 +1,62 @@
+﻿@model EAD_project.Models.product
+																	<div class="body"><form name="form" action="/Manager/delete?name=@Model.name"  onsubmit="return verify(this)" method="POST">
+
+<pre>
+
+
+
+
+
+</pre>							<h1 style="color:red"><pre>
+Welcome! Dear Manager</h1>
+									 
+<h2 style="color:green">Are you want to remove this product?</h2></pre>
+<pre>		
+							                           <a href="/Home/signout"><i>Sign Out?</a><br>
+	
+<b>Name:</b><p>@Model.name</p>
+<b>Brand:</b><p>@Model.brand</p>  
+<b>Price:</b><p>@Model.price</p>                           
+		
+		<input type="submit" name="signin" value="Delete">   <a href="/Manager/manager"><i>Back To Menu?</a>     								                            
+		        								
+
+</pre>
+	<!--<script type="text/javascript">
+
+
+	function verify()
+            {
+		
+                var name = document.forms["form"]["pname"].value;
+               	var brand=document.forms["form"]["pbrand"].value;
+		
+                		
+               		
+
+		if(name=="")
+		{
+			alert(" Name field is empty ... !!!");
+			return false;
+		}
+		if(brand=="")
+		{
+			alert("Brand field is empty ... !!!");
+			return false;
+		}
+		
+		                            }
+
+
+	</script>
+-->
+
+
+	<img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+</div>			
+			<p>
+			              	� 2014 by Purple 7 Boutique. All Rights Reserved
+	</p>
+			</div>
+</body>
+</html>

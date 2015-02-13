@@ -1,0 +1,47 @@
+﻿@model EAD_project.Models.user
+																	<div class="body">
+                                                                        <form name="form" action="/Home/validate" onsubmit="return verify(this)" method="POST">
+                                                                            <h1 style="color:red">
+                                                                                <pre>
+<b>Invalid User Name or Password! Try Again OR Register Yourself
+                                                                            </h1><h2 style="color:red"><b>Sign In</h2>
+<pre> 													                                               
+</pre>
+<pre>	
+	 @using (Html.BeginForm("validate", "Home"))
+    {
+        @Html.Label("Login Name:")<span style="color:#D00000;">*</span>       @Html.TextBox("loginName")<br>
+        @Html.Label("Password: ")<span style="color:#D00000;">*</span>        <input type="password" name="password" value=""><br>
+                  @Html.Label("User Type:")<span style="color:#D00000;">*</span> @Html.RadioButton("type", "manager", new { _checked = "checked" })@Html.Label("Manager")  @Html.RadioButton("type", "customer")@Html.Label("Customer")<br>
+                  
+        <input type="submit" name="signin" value="Log In"> <input type="reset" name="clear" value="Reset">
+     }
+        
+        @Html.ActionLink("Create New Account","signup")  
+        
+      
+                                                                            
+ <img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+										  
+</pre>
+                                                                            <script type="text/javascript">
+                                                                                function verify() {
+                                                                                    var name = document.forms["form"]["name"].value;
+                                                                                    var pass = document.forms["form"]["password"].value;
+                                                                                    if (name == "") {
+                                                                                        alert("User Name field is empty ... !!!");
+                                                                                        return false;
+                                                                                    }
+                                                                                    if (pass == "") {
+                                                                                        alert("Password field is empty ... !!!");
+                                                                                        return false;
+                                                                                    }
+                                                                                }
+                                                                            </script>
+</div>			
+			@*<p>
+			              	? 2014 by Purple 7 Boutique. All Rights Reserved
+	</p>*@
+			</div>
+@*</body>
+</html>*@	

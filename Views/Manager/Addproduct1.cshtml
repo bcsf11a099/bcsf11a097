@@ -1,0 +1,89 @@
+﻿@model EAD_project.Models.product																	
+       <div class="body"><form name="form" action="/Manager/add"  onsubmit="return verify(this)" method="POST">
+
+<pre>
+
+
+
+
+
+</pre>							<h1 style="color:red"><pre>
+Welcome! Dear Manager</h1>
+									 
+<h2 style="color:green">Select which product you want to add?</h2>
+
+<h3 style="color:brown">Given product Name and brand are already exist! Enter new name?</h3>
+</pre>
+<pre>		
+							                  						  <a href="#"><i>Sign Out?</a><br>
+		
+		Product Type:<span style="color:#D00000;">*</span> <input type="radio" name="type" CHECKED value="dress"</input>Dress  <input type="radio" name="type" value="shoes" </input>shoes  <input type="radio" name="type" value="bag" </input>Bag
+		Name:<span style="color:#D00000;">*</span>    <input type="text" name="pname"   value=""> 
+		Brand:<span style="color:#D00000;">*</span>   <input type="text" name="pbrand"   value="">                             
+		Price:<span style="color:#D00000;">*</span>   <input type="text" name="price"   value="">                             
+		Quantity:<span style="color:#D00000;">*</span><input type="text" name="quantity"   value="">                             
+		
+		<input type="submit" name="signin" value="Submit"> <input type="reset" name="clear" value="Reset">  <a href="#"><i>Back To Menu?</a>     								                            
+		        								
+
+</pre>
+	<script type="text/javascript">
+
+
+	function verify()
+            {
+		
+                var name = document.forms["form"]["pname"].value;
+               	var brand=document.forms["form"]["pbrand"].value;
+		var pric = document.forms["form"]["price"].value;
+               	var qua=document.forms["form"]["quantity"].value;
+		var digit=/^[0-9]+$/
+                		
+               		
+
+		if(name=="")
+		{
+			alert(" Name field is empty ... !!!");
+			return false;
+		}
+		if(brand=="")
+		{
+			alert("Brand field is empty ... !!!");
+			return false;
+		}
+		if(pric=="")
+		{
+			alert("Price field is empty ... !!!");
+			return false;
+		}
+		if(qua=="")
+		{
+			alert("quantity field is empty ... !!!");
+			return false;
+		}
+		if(!pric.match(digit))
+		{
+			alert("price is not valid ... !!!");
+			return false;
+		}
+		if (!qua.match(digit))
+                    {
+                        alert("quantity is not valid ...!!! ");
+			return false;
+                    }
+
+		                            }
+
+
+	</script>
+
+
+
+	<img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+</div>			
+			@*<p>
+			              	� 2014 by Purple 7 Boutique. All Rights Reserved
+	</p>*@
+			</div>
+@*</body>
+</html>*@

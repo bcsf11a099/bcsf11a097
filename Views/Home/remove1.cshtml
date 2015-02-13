@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<title>remove product</title>
+	<link rel="stylesheet" href="~/Content/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<img src="~/Images/logo.jpg" alt="LOGO" height="112" width="248"></a>
+				</div>
+	
+	</div>
+																	<div class="body"><form name="form" action="Rproduct"  onsubmit="return verify(this)" method="POST">
+
+<pre>
+
+
+
+
+
+</pre>							<h1 style="color:red"><pre>
+Welcome! Dear Manager</h1>
+									 
+<h2 style="color:green">Enter name and brand which product you want to remove?</h2></pre>
+
+<h2 style="color:brown">Name or brand name not found! Enter correct values</h3>
+<pre>		
+							                  						  <a href="/Home/signout"><i>Sign Out?</a><br>
+		
+		
+		Name:<span style="color:#D00000;">*</span>    <input type="text" name="pname"   value=""> 
+		Brand:<span style="color:#D00000;">*</span>   <input type="text" name="pbrand"   value="">                             
+		
+		<input type="submit" name="signin" value="Submit"> <input type="reset" name="clear" value="Reset">  <a href="/Home/manager"><i>Back To Menu?</a>     								                            
+		        								
+
+</pre>
+	<script type="text/javascript">
+
+
+	function verify()
+            {
+		
+                var name = document.forms["form"]["pname"].value;
+               	var brand=document.forms["form"]["pbrand"].value;
+		
+                		
+               		
+
+		if(name=="")
+		{
+			alert(" Name field is empty ... !!!");
+			return false;
+		}
+		if(brand=="")
+		{
+			alert("Brand field is empty ... !!!");
+			return false;
+		}
+		
+		                            }
+
+
+	</script>
+
+
+
+	<img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+</div>			
+			<p>
+			              	� 2014 by Purple 7 Boutique. All Rights Reserved
+	</p>
+			</div>
+</body>
+</html>

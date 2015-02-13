@@ -1,0 +1,83 @@
+﻿@model EAD_project.Models.product
+@*<!DOCTYPE html>
+<html>
+<head>
+
+
+	<meta charset="UTF-8">
+	<title>change product</title>
+	<link rel="stylesheet" href="~/Content/style.css" type="text/css"><%@ page language = "java" import = "java.util.*,java.sql.*,java.sql.ResultSet,java.sql.Connection,java.sql.DriverManager ,java.sql.*,java.util.*,java.io.*" %>
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<img src="~/Images/logo.jpg" alt="LOGO" height="112" width="248"></a>
+				</div>
+	
+	</div>*@
+																	<div class="body"><form name="form" action="/Manager/update?name=@Model.name"   onsubmit="return verify(this)" method="POST" enctype="multipart/form-data">
+
+<pre>
+
+
+
+
+
+</pre>							<h1 style="color:red"><pre>
+Welcome! Dear Manager</h1></pre>
+<pre>
+									                 			<a href="/Home/signout"><i>Sign Out?</a><br>
+</pre>
+<pre>
+<h2 style="color:green">Enter Name of product whose detail you want to change?<h2>
+                                                                                  
+        <p>@ViewBag.name </p>
+ 
+		Brand:   <input type="text" name="brand" value="@Model.brand">
+                             
+		Price:  <input type="text" name="price" value="@Model.price">
+                             
+		Quantity:<input type="text" name="quantity" value="@Model.quantity" >
+        
+              Image:<input type="file" name="image" value="">
+    
+                           <input type="submit" name="signin" value="Submit"> <input type="reset" name="clear" value="Reset">  <a href="#"><i>Back To Menu?</a>     								                            
+		        								
+</pre>
+
+<script type="text/javascript">
+
+
+	function verify()
+            {
+		
+                var name = document.forms["form"]["pname"].value;
+		var pric = document.forms["form"]["price"].value;
+               	var qua=document.forms["form"]["quantity"].value;
+		var digit=/^[0-9]+$/
+                		
+               		
+
+		if(name=="")
+		{
+			alert(" Name field is empty ... !!!");
+			return false;
+		}
+		
+		
+
+		                            }
+
+
+	</script>	
+
+	<img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+</div>			
+			@*<p>
+			              	� 2014 by Purple 7 Boutique. All Rights Reserved
+	</p>*@
+			</div>
+@*</body>
+</html>*@

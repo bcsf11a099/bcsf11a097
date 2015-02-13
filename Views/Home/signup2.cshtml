@@ -1,0 +1,116 @@
+@model EAD_project.Models.user											
+								<div class="body">
+						 <form name="form" action="/Home/addUser"  onsubmit="return verify(this)" method="POST">
+<pre>
+<h1 style="color:red"><b>
+</h1><h2 style="color:red"><b><i>New User? Please Sign Up</h2></pre><pre> 		                                              </pre>
+<h3 style="color:brown">User Name is already exist! Please register with different user Name.</h3>      
+<pre> 
+	 
+   
+	  Your Name:<span style="color:#D00000;">*</span>
+      <input type="text" name="name" value=""><br>	
+	  Your age:
+      <input type="text" name="age" value=""><br>
+      Your address:<span style="color:#D00000;">*</span>
+      <input type="text" name="address" value=""><br>
+	  Your Number:
+      <input type="text" name="number" value=""><br>                                  
+	  Login Name:<span style="color:#D00000;">*</span>
+      <input type="text" name="loginName" value="" id="t1"><input type="button" id="b1" value="check Availability">
+           <p id="p1"> </p>	  
+      Your Password:<span style="color:#D00000;">*</span>
+      <input type="password" name="password" value=""><br>
+      User Type:<span style="color:#D00000;">*</span> <input type="radio" name="type" value="manager" </input>Manager  <input type="radio" name="type"  CHECKED value="customer" </input>Customer 
+	 
+	<input type ="submit" name="Sign Up" value="Sign Up">   <input type ="reset" name="reset" value="Reset">
+    @Scripts.Render("~/bundles/jquery")    
+    <script>
+      $(document).ready(function () {
+        $('#b1').click(function () {
+            $.getJSON("/Home/checkUser?lName=" + $('#t1').val(), function (x) {
+                $('#p1').text(x);
+            });
+        });
+     });
+     </script>				
+     
+                                                                            
+   <img src="~/Images/c4.jpg"><img src="~/Images/s3.jpg"><img src="~/Images/b2.jpg">
+
+										  
+</pre>
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+
+	function verify()
+            {
+		
+                var name = document.forms["form"]["name"].value;
+               	var pass=document.forms["form"]["password"].value;
+		var lname = document.forms["form"]["loginName"].value;
+               	var address=document.forms["form"]["address"].value;
+		var mobile=document.forms["form"]["number"].value;
+		var Vage=document.forms["form"]["age"].value;
+		var regmobile=/^[0-9]+$/
+                var type1=document.forms["form"]["type"].value;		
+               		
+
+		if(name=="")
+		{
+			alert(" Name field is empty ... !!!");
+			return false;
+		}
+		if(address=="")
+		{
+			alert("Address field is empty ... !!!");
+			return false;
+		}
+		if(lname=="")
+		{
+			alert("Login Name field is empty ... !!!");
+			return false;
+		}
+		if(pass=="")
+		{
+			alert("Password field is empty ... !!!");
+			return false;
+		}
+		if(mobile=="")
+		{
+			alert("Mobile number field is empty ... !!!");
+			return false;
+		}
+		if (mobile.length != 11)
+                    {
+                        alert("Sorry..moblie number is not valid !!! ");
+			return false;
+                    }
+
+		 if (!mobile.match(regmobile))
+                    {
+                        alert("mobile number is not valid...");
+			return false;
+                    }
+		if (!Vage.match(regmobile))
+                    {
+                        alert("Age is not valid...");
+			return false;
+                    }
+		 if(type1=="")
+		{
+			alert("User type field is empty ... !!!");
+			return false;
+		}
+
+
+		                            }
+
+
+	</script>
+</div><div id="connect">
+					
+           </div>
+      </div>
+       
